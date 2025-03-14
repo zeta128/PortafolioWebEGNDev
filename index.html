@@ -79,9 +79,19 @@ body::after {
     height: auto;
     z-index: 10; /* Asegura que quede por encima */
 }
+.arrow {
+    position: absolute;
+    top: 170px; /* Ajusta la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    z-index: 11; /* Asegura que quede por encima */
+}
     </style>
   </head>
   <body>
+    <img src="Images/ArrowUp.gif" class="arrow" alt="arrow">
     <img src="Images/Logo.png" class="logo" alt="Logo">
     <div class="contenedor">
       <img
