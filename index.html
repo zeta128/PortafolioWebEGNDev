@@ -58,8 +58,9 @@
         height: 1600px; /* Tamaño original */
         /*max-width: 100%; /* Asegura que no se desborde en pantallas más pequeñas */
         /*max-height: 100vh; /* Evita que sea más alta que la pantalla */
-        z-index: 1; /* Mayor que la imagen-scroll */
+        z-index: 2; /* Mayor que la imagen-scroll */
       }
+      
       /*.imagen-fija {       
         position: fixed;
         width: 720px;
@@ -76,13 +77,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 2;
+        z-index: 3;
       }
 
       .imagen-fija {
         width: 720px;
         height: auto;
-        z-index: 2;
+        z-index: 3;
+      }
+      .contenedor-headInto {
+        position: fixed;          
+        display: flex;
+        justify-content: center;
+        margin-bottom: 775px;
+        z-index: 1;
+      }
+
+      .head-into {
+        width: 140px;
+        height: auto;
+        z-index: 30;
       }
       .imagen-scroll,
       .imagen-fija {
@@ -111,14 +125,22 @@
   <body>
     <img src="Images/ArrowUp.gif" class="arrow" alt="arrow" />
     <img src="Images/Logo.png" class="logo" alt="Logo" />
-    <div class="contenedor">
+    <div class="contenedor">       
       <img
         src="Images/AvatarUp.png"
         class="imagen-scroll"
         alt="Imagen que reacciona al scroll"
       />
     </div>
+    <div class="contenedor-headInto">
+    <img
+        src="Images/HeadInto.png"
+        class="head-into"
+        alt="Head into"
+      />
+    </div>
     <div class="contenedor-fijo">
+        
       <img
         src="Images/AvatarDown (1).png"
         class="imagen-fija"
