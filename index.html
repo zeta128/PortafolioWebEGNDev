@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>Portafolio personal EGN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <style>
@@ -60,7 +60,7 @@
         /*max-height: 100vh; /* Evita que sea más alta que la pantalla */
         z-index: 5; /* Mayor que la imagen-scroll */
       }
-      
+
       /*.imagen-fija {       
         position: fixed;
         width: 720px;
@@ -86,7 +86,7 @@
         z-index: 5;
       }
       .contenedor-headInto {
-        position: fixed;          
+        position: fixed;
         display: flex;
         justify-content: center;
         margin-bottom: 770px;
@@ -98,9 +98,26 @@
         height: auto;
         z-index: 4;
       }
+      .contenedor-eyesClosed {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 685px;
+        z-index: 6;
+      }
+
+      .eyes-closed {
+        width: 95px;
+        height: auto;
+        z-index: 6;
+        animation: alternarVisibilidad 5s infinite steps(1);
+      }
       .imagen-scroll,
       .imagen-fija {
         transform: translateY(150px); /* Mueve ambas imágenes hacia abajo */
+      }
+      .eyes-closed {
+        transform: translateX(-6px); /* Mueve ambas imágenes hacia abajo */
       }
       .logo {
         position: absolute;
@@ -120,12 +137,18 @@
         height: auto;
         z-index: 11; /* Asegura que quede por encima */
       }
+        @keyframes alternarVisibilidad {
+            0% { display: block; }   /* Imagen aparece inmediatamente */
+            2.4% { display: none; }  /* Después de 0.4s, desaparece */
+            100% { display: none; }  /* Se mantiene oculta por 7s */
+        }
+  
     </style>
   </head>
   <body>
     <img src="Images/ArrowUp.gif" class="arrow" alt="arrow" />
     <img src="Images/Logo.png" class="logo" alt="Logo" />
-    <div class="contenedor">       
+    <div class="contenedor">
       <img
         src="Images/AvatarUp.png"
         class="imagen-scroll"
@@ -133,14 +156,12 @@
       />
     </div>
     <div class="contenedor-headInto">
-    <img
-        src="Images/HeadInto.png"
-        class="head-into"
-        alt="Head into"
-      />
+      <img src="Images/HeadInto.png" class="head-into" alt="Head into" />
+    </div>
+    <div class="contenedor-eyesClosed">
+      <img src="Images/eyesClosed.png" class="eyes-closed" alt="eyes closed" />
     </div>
     <div class="contenedor-fijo">
-        
       <img
         src="Images/AvatarDown (1).png"
         class="imagen-fija"
