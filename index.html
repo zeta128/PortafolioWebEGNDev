@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <style>
+      html,
+      body {
+        -webkit-overflow-scrolling: touch; /* Mejora el scroll en dispositivos táctiles */
+      }
       body {
         /*background: url("Images/Fondo.gif") no-repeat center center fixed;*/
         background: black; /* Fondo negro en el centro */
         background-size: cover;
         margin: 0;
-        height: 200vh; /* Para generar scroll*/
+        height: 250vh; /* Para generar scroll*/
         display: flex;
         align-items: center;
         justify-content: center;
@@ -82,7 +86,7 @@
       }
       .imagen-scroll,
       .imagen-fija {
-        transform: translateY(300px); /* Mueve ambas imágenes hacia abajo */
+        transform: translateY(150px); /* Mueve ambas imágenes hacia abajo */
       }
       .logo {
         position: absolute;
