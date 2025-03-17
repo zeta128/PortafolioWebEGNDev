@@ -144,6 +144,24 @@
         }
   
     </style>
+<script>
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    let maxScroll = window.innerHeight * 0.6; // Punto donde la imagen se desvanece completamente
+
+    // Calcular opacidad basada en el scroll
+    let opacity = 1 - scrollTop / maxScroll;
+
+    // Evitar valores fuera del rango 0-1
+    opacity = Math.max(0, Math.min(1, opacity));
+
+    // Aplicar opacidad a la imagen fija
+    document.getElementById("imagen-fija").style.opacity = opacity;
+    document.getElementById("head-into").style.opacity = opacity;
+    document.getElementById("eyes-closed").style.opacity = opacity;
+  });
+</script>
+
   </head>
   <body>
     <img src="Images/ArrowUp.gif" class="arrow" alt="arrow" />
@@ -156,15 +174,16 @@
       />
     </div>
     <div class="contenedor-headInto">
-      <img src="Images/HeadInto.png" class="head-into" alt="Head into" />
+      <img src="Images/HeadInto.png" class="head-into" id="head-into" alt="Head into" />
     </div>
     <div class="contenedor-eyesClosed">
-      <img src="Images/eyesClosed.png" class="eyes-closed" alt="eyes closed" />
+      <img src="Images/eyesClosed.png" class="eyes-closed" id="eyes-closed" alt="eyes closed" />
     </div>
     <div class="contenedor-fijo">
       <img
         src="Images/AvatarDown.png"
         class="imagen-fija"
+        id="imagen-fija"
         alt="Imagen fija"
       />
     </div>
