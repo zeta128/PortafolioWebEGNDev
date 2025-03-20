@@ -6,47 +6,25 @@
     <title>Portafolio personal EGN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       html,
       body {
         -webkit-overflow-scrolling: touch; /* Mejora el scroll en dispositivos táctiles */
       }
       body {
-        /*background: url("Images/Fondo.gif") no-repeat center center fixed;*/
-        background: black; /* Fondo negro en el centro */
+        background: url("Images/Font2.jpg") no-repeat center center fixed;
         background-size: cover;
         margin: 0;
-        height: 250vh; /* Para generar scroll*/
+        height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      /* Primera imagen en el primer tercio */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 33.33vw; /* 1/3 de la pantalla */
-        height: 100vh;
-        background: url("Images/Fondo.gif") no-repeat center center;
-        background-size: cover;
-        z-index: -1; /* Para que quede detrás del contenido */
-      }
-
-      /* Segunda imagen en el último tercio */
-      body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 33.33vw; /* 1/3 de la pantalla */
-        height: 100vh;
-        background: url("Images/Fondo.gif") no-repeat center center;
-        background-size: cover;
-        z-index: -1;
-      }
       .contenedor {
         display: flex;
         justify-content: center; /* Centrar horizontalmente */
@@ -104,6 +82,9 @@
         justify-content: center;
         margin-bottom: 685px;
         z-index: 6;
+        
+        transform: translateY(598px); 
+      
       }
 
       .eyes-closed {
@@ -111,13 +92,19 @@
         height: auto;
         z-index: 6;
         animation: alternarVisibilidad 5s infinite steps(1);
+        
       }
+     
       .imagen-scroll,
       .imagen-fija {
-        transform: translateY(150px); /* Mueve ambas imágenes hacia abajo */
+        transform: translateY(750px); /* Mueve ambas imágenes hacia abajo */
+      }
+      .head-into {
+        transform: translateY(597px); /* Mueve ambas imágenes hacia abajo */
       }
       .eyes-closed {
-        transform: translateX(-6px); /* Mueve ambas imágenes hacia abajo */
+        transform: translateX(-6px); 
+       
       }
       .logo {
         position: absolute;
@@ -130,41 +117,63 @@
       }
       .arrow {
         position: absolute;
-        top: 230px; /* Ajusta la distancia desde la parte superior */
+        top: 30%; /* Ajusta la distancia desde la parte superior */
         left: 50%;
         transform: translateX(-50%); /* Centra horizontalmente */
-        width: 150px; /* Ajusta el tamaño del logo */
+        width: 7750px; /* Ajusta el tamaño del logo */
         height: auto;
-        z-index: 10; /* Asegura que quede por encima */
+        z-index: 70; /* Asegura que quede por encima */
       }
-        @keyframes alternarVisibilidad {
-            0% { display: block; }   /* Imagen aparece inmediatamente */
-            2.4% { display: none; }  /* Después de 0.4s, desaparece */
-            100% { display: none; }  /* Se mantiene oculta por 7s */
-        }
-  
+      @keyframes alternarVisibilidad {
+        0% {
+          display: block;
+        } /* Imagen aparece inmediatamente */
+        2.4% {
+          display: none;
+        } /* Después de 0.4s, desaparece */
+        100% {
+          display: none;
+        } /* Se mantiene oculta por 7s */
+      }
     </style>
-<script>
-  window.addEventListener("scroll", function () {
-    let scrollTop = window.scrollY || document.documentElement.scrollTop;
-    let maxScroll = window.innerHeight * 0.6; // Punto donde la imagen se desvanece completamente
+    <script>
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        let maxScroll = window.innerHeight * 0.6; // Punto donde la imagen se desvanece completamente
 
-    // Calcular opacidad basada en el scroll
-    let opacity = 1 - scrollTop / maxScroll;
+        // Calcular opacidad basada en el scroll
+        let opacity = 1 - scrollTop / maxScroll;
 
-    // Evitar valores fuera del rango 0-1
-    opacity = Math.max(0, Math.min(1, opacity));
+        // Evitar valores fuera del rango 0-1
+        opacity = Math.max(0, Math.min(1, opacity));
 
-    // Aplicar opacidad a la imagen fija
-    document.getElementById("imagen-fija").style.opacity = opacity;
-    document.getElementById("head-into").style.opacity = opacity;
-    document.getElementById("eyes-closed").style.opacity = opacity;
-  });
-</script>
-
+        // Aplicar opacidad a la imagen fija
+        document.getElementById("imagen-fija").style.opacity = opacity;
+        document.getElementById("head-into").style.opacity = opacity;
+        document.getElementById("eyes-closed").style.opacity = opacity;
+      });
+    </script>
   </head>
   <body>
-    <img src="Images/ArrowUp.gif" class="arrow" alt="arrow" />
+    <div class="arrow" alt="arrow">
+      <i class="fa-solid fa-arrow-up" style="color: #ffffff"></i>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 19V5M12 5L5 12M12 5L19 12"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+
     <img src="Images/logo.png" class="logo" alt="Logo" />
     <div class="contenedor">
       <img
@@ -174,10 +183,20 @@
       />
     </div>
     <div class="contenedor-headInto">
-      <img src="Images/HeadInto.png" class="head-into" id="head-into" alt="Head into" />
+      <img
+        src="Images/HeadInto.png"
+        class="head-into"
+        id="head-into"
+        alt="Head into"
+      />
     </div>
     <div class="contenedor-eyesClosed">
-      <img src="Images/eyesClosed.png" class="eyes-closed" id="eyes-closed" alt="eyes closed" />
+      <img
+        src="Images/eyesClosed.png"
+        class="eyes-closed"
+        id="eyes-closed"
+        alt="eyes closed"
+      />
     </div>
     <div class="contenedor-fijo">
       <img
