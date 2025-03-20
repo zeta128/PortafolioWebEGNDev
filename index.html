@@ -76,15 +76,23 @@
         height: auto;
         z-index: 4;
       }
+     
+
+     
+      .head-into {
+        transform: translateY(597px); /* Mueve ambas imágenes hacia abajo */
+      }
+    
+   
+
+      /*copy*/
+
       .contenedor-eyesClosed {
         position: fixed;
         display: flex;
         justify-content: center;
         margin-bottom: 685px;
         z-index: 6;
-        
-        transform: translateY(598px); 
-      
       }
 
       .eyes-closed {
@@ -92,19 +100,13 @@
         height: auto;
         z-index: 6;
         animation: alternarVisibilidad 5s infinite steps(1);
-        
       }
-     
       .imagen-scroll,
       .imagen-fija {
-        transform: translateY(750px); /* Mueve ambas imágenes hacia abajo */
-      }
-      .head-into {
-        transform: translateY(597px); /* Mueve ambas imágenes hacia abajo */
+        transform: translateY(150px); /* Mueve ambas imágenes hacia abajo */
       }
       .eyes-closed {
-        transform: translateX(-6px); 
-       
+        transform: translateX(-6px); /* Mueve ambas imágenes hacia abajo */
       }
       .logo {
         position: absolute;
@@ -117,12 +119,11 @@
       }
       .arrow {
         position: absolute;
-        top: 30%; /* Ajusta la distancia desde la parte superior */
+        top: 230px; /* Ajusta la distancia desde la parte superior */
         left: 50%;
         transform: translateX(-50%); /* Centra horizontalmente */
-        width: 7750px; /* Ajusta el tamaño del logo */
         height: auto;
-        z-index: 70; /* Asegura que quede por encima */
+        z-index: 10; /* Asegura que quede por encima */
       }
       @keyframes alternarVisibilidad {
         0% {
@@ -156,10 +157,9 @@
   </head>
   <body>
     <div class="arrow" alt="arrow">
-      <i class="fa-solid fa-arrow-up" style="color: #ffffff"></i>
       <svg
-        width="24"
-        height="24"
+        width="140"
+        height="140"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -172,6 +172,8 @@
           stroke-linejoin="round"
         />
       </svg>
+      <br>
+     <!-- <span style="text-align: center;">Desliza hacia arriba</span>-->
     </div>
 
     <img src="Images/logo.png" class="logo" alt="Logo" />
