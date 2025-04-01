@@ -113,10 +113,10 @@
       }
       .logo {
         position: absolute;
-        top: 20px; /* Ajusta la distancia desde la parte superior */
-        left: 50%;
+        top: 10px; /* Ajusta la distancia desde la parte superior */
+        left: 90%;
         transform: translateX(-50%); /* Centra horizontalmente */
-        width: 250px; /* Ajusta el tamaño del logo */
+        width: 200px; /* Ajusta el tamaño del logo */
         height: auto;
         z-index: 11; /* Asegura que quede por encima */
       }
@@ -127,7 +127,40 @@
         transform: translateX(-50%); /* Centra horizontalmente */
         height: auto;
         z-index: 10; /* Asegura que quede por encima */
+        animation: fadeInOut 5s ease-in-out infinite;
       }
+
+      .scroll-text {
+        position: absolute;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 
+          -1px -1px 0 #000, 
+           1px -1px 0 #000, 
+          -1px  1px 0 #000, 
+           1px  1px 0 #000;
+        z-index: 10;
+        top: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        animation: fadeInOut 5s ease-in-out infinite;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
       @keyframes alternarVisibilidad {
         0% {
           display: block;
@@ -200,12 +233,12 @@
         margin-left: 10px;  
         font-weight: bold;
         color: white; /* Color del texto */
-      text-shadow: 
-        -1px -1px 0 #000, 
-         1px -1px 0 #000, 
-        -1px  1px 0 #000, 
-         1px  1px 0 #000; /* Borde azul */
-         z-index: 12;
+        text-shadow: 
+          -1px -1px 0 #000, 
+           1px -1px 0 #000, 
+          -1px  1px 0 #000, 
+           1px  1px 0 #000; /* Borde azul */
+           z-index: 12;
       }
       /**/
     </style>
@@ -248,8 +281,8 @@
 
     <div class="arrow" alt="arrow">
       <svg
-        width="140"
-        height="140"
+        width="130"
+        height="130"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -263,8 +296,8 @@
         />
       </svg>
       <br />
-      <!-- <span style="text-align: center;">Desliza hacia arriba</span>-->
     </div>
+    <span class="scroll-text">Desplaza hacia arriba</span>
 
     <img src="Images/logo.webp" class="logo" alt="Logo" />
     <div class="contenedor">
