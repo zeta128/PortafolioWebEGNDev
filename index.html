@@ -6,6 +6,12 @@
     <title>Portafolio personal EGN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <!-- Bootstrap para estilos base -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -24,7 +30,7 @@
         align-items: center;
         justify-content: center;
       }
-     
+
       .contenedor {
         display: flex;
         justify-content: center; /* Centrar horizontalmente */
@@ -76,14 +82,11 @@
         height: auto;
         z-index: 4;
       }
-     
 
-     /*
+      /*
       .head-into {
         transform: translateY(7px);  Mueve ambas imágenes hacia abajo 
       }*/
-    
-   
 
       /*copy*/
 
@@ -136,6 +139,75 @@
           display: none;
         } /* Se mantiene oculta por 7s */
       }
+      /* Redes sociales */
+      .social-links {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        gap: 10px;
+        z-index: 12; /* Asegura que quede por encima */
+      }
+
+      /* Estilo para los botones */
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: white;
+        border-radius: 8px;
+        transition: transform 0.2s, opacity 0.3s;
+        z-index: 12;
+      }
+
+      /* Colores de cada red */
+      .linkedin {
+        background: #0077b5;
+      }
+      .linkedin:hover {
+        background: #005582;
+      }
+
+      .gmail {
+        background: #d14836;
+      }
+      .gmail:hover {
+        background: #a83327;
+      }
+
+      .whatsapp {
+        background: #25d366;
+      }
+      .whatsapp:hover {
+        background: #1da851;
+      }
+
+      /* Efecto de hover */
+      .social-links a:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .contact-text {
+        position: fixed;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 45px;
+        margin-left: 10px;  
+        font-weight: bold;
+        color: white; /* Color del texto */
+      text-shadow: 
+        -1px -1px 0 #000, 
+         1px -1px 0 #000, 
+        -1px  1px 0 #000, 
+         1px  1px 0 #000; /* Borde azul */
+         z-index: 12;
+      }
+      /**/
     </style>
     <script>
       window.addEventListener("scroll", function () {
@@ -156,6 +228,24 @@
     </script>
   </head>
   <body>
+    <div class="social-links">
+      <a
+        href="https://www.linkedin.com/in/edwin-giraldo-nieto-1354a2188/"
+        target="_blank"
+        class="linkedin"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:eduin.128@gmail.com?subject=Contacto%20desde%20el%20portafolio" class="gmail">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://wa.me/3235476528" target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <span class="contact-text">Contáctame</span>
+    </div>
+    
+
     <div class="arrow" alt="arrow">
       <svg
         width="140"
@@ -172,8 +262,8 @@
           stroke-linejoin="round"
         />
       </svg>
-      <br>
-     <!-- <span style="text-align: center;">Desliza hacia arriba</span>-->
+      <br />
+      <!-- <span style="text-align: center;">Desliza hacia arriba</span>-->
     </div>
 
     <img src="Images/logo.webp" class="logo" alt="Logo" />
